@@ -46,9 +46,21 @@
 color: #8edafc;
 }
 
+.banner-text a {
+    color: grey;
+}
+
 #search-bar {
     height: 50px;
     background-color: cadetblue;
+}
+
+.contact-list .user-info {
+    background-color: white;
+}
+
+.user-info.clicked {
+    background-color: #e9ebeb;
 }
 
 #messages {

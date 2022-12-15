@@ -50,7 +50,10 @@
                                 <div id="search-bar">barra ricerca</div> <!--search bar messages-->
 
                                 <section id="contacts-list"> <!--list of the chats-->
-                                    <div v-for="(contact, index) in contacts" class="user-info d-flex align-items-center p-2" @click="showClickedChat(index)">
+                                    <div v-for="(contact, index) in contacts" 
+                                        :class="(contactIndex === index) ? 'user-info d-flex align-items-center p-2 clicked' : 'user-info d-flex align-items-center p-2'"
+                                        @click="showClickedChat(index)"
+                                    >
                                         <div class="avatar">
                                             <img class="img-fluid" :src="`./img/avatar${contact.avatar}.jpg`" :alt="`${contact.name} profile picture`">
                                         </div>
@@ -82,7 +85,8 @@
 
                                 <section id="messages"> <!--dispaly of the chat with the chosen contact-->
                                     <div v-for="(contact, index) in contacts[contactIndex].messages" 
-                                        :class="(contact.status === 'sent') ? 'row px-4 py-2 justify-content-end' : 'row px-4 py-2'">
+                                        :class="(contact.status === 'sent') ? 'row px-4 py-2 justify-content-end' : 'row px-4 py-2'"
+                                    >
                                         <div class="col-4">
                                             <div :class="(contact.status === 'sent') ? 'message sent-message' : 'message received-message'">
                                                 {{ contact.message }}
