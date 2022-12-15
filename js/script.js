@@ -169,5 +169,11 @@ createApp({
 
             contactIndex: 0
         }
-    }
+    },
+
+    methods: {
+        showClickedChat(index) {
+            this.contactIndex = index;
+        }
+    } 
 }).mount('#app');
