@@ -18,38 +18,89 @@
                 <div class="container wrapper">
                     <div class="row">
 
-                        <div class="col-4">
-                            <section id="contacts-header" class="d-flex justify-content-between p-3"> <!--header of the list of contacts-->
-                                <div class="user-info d-flex align-items-center">
-                                    <div class="avatar">
-                                        <img class="img-fluid" src="./img/avatar_io.jpg" alt="User profile picture">
+                        <div class="col-4 p-0">
+                            <section id="contacts">
+
+                                <section id="contacts-header" class="d-flex justify-content-between p-3"> <!--header of the list of contacts-->
+                                    <div class="user-info d-flex align-items-center">
+                                        <div class="avatar">
+                                            <img class="img-fluid" src="./img/avatar_io.jpg" alt="User profile picture">
+                                        </div>
+                                        <span class="fs-4 mx-2">Sofia</span>
                                     </div>
-                                    <span class="fs-4">Sofia</span>
+
+                                    <div class="options d-flex align-items-center">
+                                        <i class="fa-solid fa-circle-notch"></i>
+                                        <i class="fa-solid fa-message"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </section>
+
+                                <div class="banner p-4 d-flex"> <!--banner set notifications-->
+                                    <div class="bell-notification">
+                                        <i class="fa-solid fa-bell-slash fa-2xl"></i>
+                                    </div>
+
+                                    <div class="banner-text mx-2">
+                                        <p class="fs-5 m-0">Ricevi notifiche sui messaggi</p>
+                                        <a href="#">Attiva notifiche adesso</a>
+                                    </div>
                                 </div>
 
-                                <div class="options d-flex align-items-center">
-                                    <i class="fa-solid fa-circle-notch"></i>
-                                    <i class="fa-solid fa-message"></i>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </div>
+                                <div id="search-bar">barra ricerca</div> <!--search bar messages-->
+
+                                <section id="contact-lists">
+                                    <div v-for="contact in contacts" class="user-info d-flex align-items-center p-2">
+                                        <div class="avatar">
+                                            <img class="img-fluid" :src="`./img/avatar${contact.avatar}.jpg`" :alt="`${contact.name} profile picture`">
+                                        </div>
+                                        <span class="fs-4 mx-2">{{ contact.name }}</span>
+                                    </div>
+                                </section>
+
                             </section>
 
-                            <div class="banner p-4 d-flex"> <!--banner set notifications-->
-                                <div class="bell-notification">
-                                    <i class="fa-solid fa-bell-slash fa-2xl"></i>
-                                </div>
-
-                                <div class="banner-text mx-2">
-                                    <p class="fs-5 m-0">Ricevi notifiche sui messaggi</p>
-                                    <a href="#">Attiva notifiche adesso</a>
-                                </div>
-                            </div>
-
-                            <div id="search-bar">barra ricerca</div> <!--searche bar messages-->
                         </div>
 
-                        <div class="col-8">
+                        <div class="col-8 p-0">
+                            <section id="chat">
 
+                                <section id="chat-header" class="d-flex justify-content-between p-3"> <!--header of the shown chat-->
+                                    <div class="user-info d-flex align-items-center"> <!--info & option for shown contact-->
+                                        <div class="avatar">
+                                            <img class="img-fluid" src="./img/avatar_1.jpg" alt="Contact profile picture">
+                                        </div>
+                                        <span class="fs-4 mx-2">Michele</span>
+                                    </div>
+
+                                    <div class="options d-flex align-items-center">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <i class="fa-solid fa-paperclip"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </div>
+                                </section>
+
+                                <section id="messages"> <!--dispaly of the chat with the chosen contact-->
+                                    <div class="row px-4 py-2">
+                                        <div class="col-4">
+                                            <div class="message sent-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row px-4 py-2">
+                                        <div class="col-4">
+                                            <div class="message sent-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row px-4 py-2">
+                                        <div class="col-4">
+                                            <div class="message received-message">Lorem, ipsum.</div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </section>
                         </div>
                     </div>
                 </div>

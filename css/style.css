@@ -3,7 +3,13 @@
     margin-top: 50px;
 }
 
-#contacts-header {
+#contacts,
+#chat {
+    height: 90vh;
+}
+
+#contacts-header,
+#chat-header {
     background-color: #eaeaea;
 }
 
@@ -43,4 +49,21 @@ color: #8edafc;
 #search-bar {
     height: 50px;
     background-color: cadetblue;
+}
+
+#messages {
+background-image: url('../img/mine.jpg');
+}
+
+.message {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.message.received-message {
+    background-color: white;
+}
+
+.message.sent-message {
+    background-color: #d5f9ba;
 }
