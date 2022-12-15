@@ -165,7 +165,9 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            contactIndex: 0
         }
     }
 }).mount('#app');

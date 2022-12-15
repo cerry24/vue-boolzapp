@@ -81,21 +81,10 @@
                                 </section>
 
                                 <section id="messages"> <!--dispaly of the chat with the chosen contact-->
-                                    <div class="row px-4 py-2">
+                                    <div v-for="(contact) in contacts[contactIndex].messages" 
+                                        :class="(contact.status === 'sent') ? 'row px-4 py-2 justify-content-end' : 'row px-4 py-2'">
                                         <div class="col-4">
-                                            <div class="message sent-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row px-4 py-2">
-                                        <div class="col-4">
-                                            <div class="message sent-message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row px-4 py-2">
-                                        <div class="col-4">
-                                            <div class="message received-message">Lorem, ipsum.</div>
+                                            <div :class="(contact.status === 'sent') ? 'message sent-message' : 'message received-message'">{{ contact.message }}</div>
                                         </div>
                                     </div>
                                 </section>

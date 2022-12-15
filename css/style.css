@@ -53,10 +53,11 @@ color: #8edafc;
 
 #messages {
 background-image: url('../img/mine.jpg');
+height: 100%;
 }
 
 .message {
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 10px;
 }
 
