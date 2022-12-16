@@ -181,6 +181,10 @@ createApp({
             this.contacts[this.contactIndex].messages.push({ date: '10/01/2020 15:51:00', message: text, status: 'sent' });
 
             this.clearInput();
+
+            setTimeout(() => {
+                this.contacts[this.contactIndex].messages.push({ date: '10/01/2020 15:51:01', message: 'ok', status: 'received' });
+            }, 1000);
         },
 
         clearInput() {
