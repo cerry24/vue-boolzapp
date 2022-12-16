@@ -167,13 +167,24 @@ createApp({
                 }
             ],
 
-            contactIndex: 0
+            contactIndex: 0,
+            newMessageText: ''
         }
     },
 
     methods: {
         showClickedChat(index) {
             this.contactIndex = index;
+        },
+
+        addNewMessage(text) {
+            this.contacts[this.contactIndex].messages.push({ date: '10/01/2020 15:51:00', message: text, status: 'sent' });
+
+            this.clearInput();
+        },
+
+        clearInput() {
+            this.newMessageText = '';
         }
     } 
 }).mount('#app');
