@@ -1,21 +1,34 @@
-.wrapper {
-    height: 90vh;
-    margin-top: 50px;
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    background-image: 
+        linear-gradient(to bottom,
+        #009688 0px,
+        #009688 15vh,
+        #dddbd1 15vh,
+        #d2dbdc 100%);
+}
+
+.container.wrapper {
+    height: 90%;
+    /* margin-top: 20px; */
 }
 
 #contacts,
 #chat {
-    height: 90vh;
+    height: 100%;
 }
 
 #contacts-header,
 #chat-header {
+    height: 80px;
     background-color: #eaeaea;
 }
 
 .avatar {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -27,7 +40,7 @@
 
 .options i {
     margin: 0 10px;
-    color: rgb(100, 100, 100);
+    color: grey;
 }
 
 .banner {
@@ -35,37 +48,43 @@
 }
 
 .bell-notification {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: white;
     border-radius: 50%;
-    padding: 16px 9.5px;
+    padding: 11.5px 10px;
 }
 
 .bell-notification i {
-color: #8edafc;
+    font-size: 25px;
+    color: #8edafc;
 }
 
 .banner-text a {
-    color: grey;
+    color: rgb(100, 100, 100);
 }
 
 #search-bar {
     height: 50px;
-    background-color: cadetblue;
+    background-color: rgb(255, 244, 244);
 }
 
-.contact-list .user-info {
+#search-lens {
+    background-color: white;
+    color: grey;
+}
+
+#contacts-list .user-info {
     background-color: white;
 }
 
-.user-info.clicked {
+#contacts-list .user-info.clicked {
     background-color: #e9ebeb;
 }
 
 #messages {
-background-image: url('../img/mine.jpg');
-height: 100%;
+    height: calc(100% - 140px);
+    background-image: url('../img/mine.jpg');
 }
 
 .message {
@@ -82,18 +101,19 @@ height: 100%;
 }
 
 #message-input {
+    height: 60px;
     background-color: #f3eeea;
 }
 
 #write-mex {
     width: 700px;
-    height: 50px;
+    height: 40px;
     border: none;
     border-radius: 8px;
 }
 
 #message-input i {
-    font-size: 30px;
-    color: rgb(100, 100, 100);
+    font-size: 25px;
+    color: grey;
     padding: 0 1rem;
 }
