@@ -90,6 +90,7 @@ body {
 .message {
     border-radius: 15px;
     padding: 10px;
+    position: relative;
 }
 
 .message.received-message {
@@ -98,6 +99,14 @@ body {
 
 .message.sent-message {
     background-color: #d5f9ba;
+}
+
+.message i {
+    color: grey;
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    cursor: pointer;
 }
 
 #message-input {

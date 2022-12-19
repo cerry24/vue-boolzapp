@@ -200,6 +200,10 @@ createApp({
                     contact.visible = false;
                 }
             });
+        },
+
+        deleteMessage(index) {
+            this.contacts[this.contactIndex].messages.splice(index, 1);
         }
     } 
 }).mount('#app');
