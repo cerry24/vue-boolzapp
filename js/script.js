@@ -168,7 +168,8 @@ createApp({
             ],
 
             contactIndex: 0,
-            newMessageText: ''
+            newMessageText: '',
+            searchedName: ''
         }
     },
 
@@ -189,6 +190,16 @@ createApp({
 
         clearInput() {
             this.newMessageText = '';
+        },
+
+        findContact(name) {
+            this.contacts.forEach(contact => {
+                if( contact.name.toLowerCase().includes(name.toLowerCase()) || name === '' ) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
         }
     } 
 }).mount('#app');

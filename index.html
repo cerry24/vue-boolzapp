@@ -56,13 +56,18 @@
                                         <span class="input-group-text" id="search-lens">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </span>
-                                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                                            v-model="searchedName"
+                                            @keyup="findContact(searchedName)"
+                                        >
                                     </div>
                                 </div>
 
                                 <section id="contacts-list"> <!--list of the chats-->
-                                    <div v-for="(contact, index) in contacts" 
-                                        :class="(contactIndex === index) ? 'user-info d-flex align-items-center p-2 clicked' : 'user-info d-flex align-items-center p-2'"
+                                    <div v-for="(contact, index) in contacts"
+                                    class="user-info align-items-center p-2"
+                                        :class="(contact.visible ? 'd-flex' : 'd-none')"
+                                        :class="(contactIndex === index) ? 'clicked' : "
                                         @click="showClickedChat(index)"
                                     >
                                         <div class="avatar">
