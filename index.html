@@ -65,9 +65,8 @@
 
                                 <section id="contacts-list"> <!--list of the chats-->
                                     <div v-for="(contact, index) in contacts"
-                                    class="user-info align-items-center p-2"
-                                        :class="(contact.visible ? 'd-flex' : 'd-none')"
-                                        :class="(contactIndex === index) ? 'clicked' : "
+                                        class="user-info align-items-center p-2"
+                                        :class="[(contact.visible ? 'd-flex' : 'd-none'), (contactIndex === index ? 'clicked' : '' )]"
                                         @click="showClickedChat(index)"
                                     >
                                         <div class="avatar">
