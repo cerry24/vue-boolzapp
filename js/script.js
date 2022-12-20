@@ -1,3 +1,5 @@
+const DateTime = luxon.DateTime;
+
 const { createApp } = Vue;
 
 createApp({
@@ -179,12 +181,12 @@ createApp({
         },
 
         addNewMessage(text) {
-            this.contacts[this.contactIndex].messages.push({ date: '10/01/2020 15:51:00', message: text, status: 'sent' });
+            this.contacts[this.contactIndex].messages.push({ date: DateTime.now().toFormat("dd/MM/yyyy hh:mm:ss"), message: text, status: 'sent' });
 
             this.clearInput();
 
             setTimeout(() => {
-                this.contacts[this.contactIndex].messages.push({ date: '10/01/2020 15:51:01', message: 'ok', status: 'received' });
+                this.contacts[this.contactIndex].messages.push({ date: DateTime.now().toFormat("dd/MM/yyyy hh:mm:ss"), message: 'ok', status: 'received' });
             }, 1000);
         },
 
