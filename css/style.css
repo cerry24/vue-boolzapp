@@ -4,7 +4,6 @@
 
 body {
     height: 100vh;
-    overflow: hidden;
     font-family: 'Lato', sans-serif;
     background-image: 
         linear-gradient(to bottom,
@@ -14,13 +13,18 @@ body {
         #d2dbdc 100%);
 }
 
-.container.wrapper {
+main {
     height: 90%;
-    padding: 0;
 }
 
-#contacts,
+#contacts {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: white;
+}
+
 #chat {
+    width: calc((100% / 3) * 2);
     height: 100%;
 }
 
@@ -28,6 +32,10 @@ body {
 #chat-header {
     height: 80px;
     background-color: #eaeaea;
+}
+
+#contacts-header {
+    border-right: 1px solid lightgray;
 }
 
 .avatar {
@@ -69,7 +77,7 @@ body {
 
 #search-bar {
     height: 50px;
-    background-color: rgb(255, 244, 244);
+    background-color: white;
 }
 
 #search-lens {
@@ -78,6 +86,7 @@ body {
 
 #contacts-list .user-info {
     background-color: white;
+    border-top: 1px solid lightgray;
 }
 
 #contacts-list .user-info.clicked {
@@ -94,6 +103,8 @@ body {
 #messages {
     height: calc(100% - 140px);
     background-image: url('../img/mine.jpg');
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .message {
