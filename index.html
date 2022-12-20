@@ -33,7 +33,7 @@
                                         <span class="fs-4 mx-2">Sofia</span>
                                     </div>
 
-                                    <div class="options d-flex align-items-center">
+                                    <div class="options d-flex align-items-center font-color-gray">
                                         <i class="fa-solid fa-circle-notch"></i>
                                         <i class="fa-solid fa-message"></i>
                                         <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -53,7 +53,7 @@
 
                                 <div id="search-bar" class="p-2"> <!--search bar messages-->
                                     <div class="input-group flex-nowrap">
-                                        <span class="input-group-text" id="search-lens">
+                                        <span class="input-group-text font-color-gray" id="search-lens">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </span>
                                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
@@ -75,10 +75,10 @@
 
                                         <div class="chat-preview mx-2">
                                             <h2 class="fs-4 mb-0">{{ contact.name }}</h2>
-                                            <span class="latest-message">{{ (contact.messages.length > 0 ? contact.messages.slice(-1)[0].message : '') }}</span>
+                                            <span class="latest-message font-color-gray">{{ (contact.messages.length > 0 ? contact.messages.slice(-1)[0].message : '') }}</span>
                                         </div>
 
-                                        <span class="latest-message-time">{{ (contact.messages.length > 0 ? contact.messages.slice(-1)[0].date.substring(11, 16) : '') }}</span>
+                                        <span class="latest-message-time font-color-gray">{{ (contact.messages.length > 0 ? contact.messages.slice(-1)[0].date.substring(11, 16) : '') }}</span>
                                     </div>
                                 </section>
 
@@ -91,10 +91,15 @@
 
                                 <section id="chat-header" class="d-flex justify-content-between p-3"> <!--header of the shown chat-->
                                     <div class="user-info d-flex align-items-center"> <!--info & option for shown contact-->
+
                                         <div class="avatar">
-                                            <img class="img-fluid" src="./img/avatar_1.jpg" alt="Contact profile picture">
+                                            <img class="img-fluid" :src="`./img/avatar${contacts[contactIndex].avatar}.jpg`" :alt="`${contacts[contactIndex].name} profile picture`">
                                         </div>
-                                        <span class="fs-4 mx-2">Michele</span>
+
+                                        <span class="fs-4 mx-2">{{ contacts[contactIndex].name }}</span>
+
+                                        <span class="font-color-gray">Ultimo accesso oggi alle 12:00</span>
+
                                     </div>
 
                                     <div class="options d-flex align-items-center">
@@ -112,7 +117,9 @@
                                             <div :class="(contact.status === 'sent') ? 'message sent-message' : 'message received-message'" data-bs-toggle="dropdown">
                                                 {{ contact.message }}
 
-                                                <i class="fa-solid fa-chevron-down"></i>
+                                                <span class="message-time font-color-gray">{{ contact.date.substring(11, 16) }}</span>
+
+                                                <i class="fa-solid fa-chevron-down font-color-gray"></i>
 
                                                 <ul class="dropdown-menu">  <!--dropdown to delete message-->
                                                     <li class="dropdown-item" @click="deleteMessage(index)">Elimina messaggio</li>
@@ -123,12 +130,12 @@
                                 </section>
 
                                 <section id="message-input" class="d-flex justify-content-between align-items-center p-2"> <!--tools of the user to write a message-->
-                                    <i class="fa-regular fa-face-smile"></i>
+                                    <i class="fa-regular fa-face-smile font-color-gray"></i>
                                     <input type="text" id="write-mex" placeholder="Scrivi un messaggio"
                                         v-model="newMessageText"
                                         @keyup.enter="addNewMessage(newMessageText)"
                                     >
-                                    <i class="fa-solid fa-microphone"></i>
+                                    <i class="fa-solid fa-microphone font-color-gray"></i>
                                 </section>
 
                             </section>
